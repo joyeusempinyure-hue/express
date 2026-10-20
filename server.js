@@ -6,7 +6,7 @@ dotenv.config()
 
 
 const app = express();
-const db = proccess.env.DATABASE_URL
+const db = process.env.DATABASE_URL;
 const port = process.env.PORT
 
 app.get("/user", (req, res) => {
@@ -19,7 +19,7 @@ app.listen(port, () => {
   console.log(`Server running on ${port}`);
 });
 
-mongoose.connect(DATABASE_URL).then(()=>{
+mongoose.connect(db).then(() => {
   console.log("Database successfuly connected")
 
 }).catch((error)=>{
